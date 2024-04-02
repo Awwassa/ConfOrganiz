@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfOrganiz.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,6 @@ namespace ConfOrganiz
     /// </summary>
     public partial class App : Application
     {
+        public static Zaharov_ConfEntities context = new Zaharov_ConfEntities();
     }
 }

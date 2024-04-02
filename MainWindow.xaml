@@ -5,8 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConfOrganiz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        MinHeight="720" MinWidth="1280"
+        Height="900" Width="1600"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Name="EventLv" Grid.Row="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Логотип">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Logo}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Названи6е мероприятия"
+                                    DisplayMemberBinding ="{Binding Name}"/>
+                    <GridViewColumn Header="Направление мероприятия"
+                                    DisplayMemberBinding ="{Binding Direction.Name}"/>
+                    <GridViewColumn Header="Дата"
+                                    DisplayMemberBinding ="{Binding Date, StringFormat=dd.MM.yyyy}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

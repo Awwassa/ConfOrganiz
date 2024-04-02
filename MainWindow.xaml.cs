@@ -23,6 +23,9 @@ namespace ConfOrganiz
         public MainWindow()
         {
             InitializeComponent();
+
+            // Заполняем Listview данными из таблицы Event
+            EventLv.ItemsSource = App.context.Event.ToList();
         }
     }
 }
